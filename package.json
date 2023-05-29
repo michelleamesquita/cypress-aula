@@ -6,13 +6,21 @@
   "scripts": {
     "test": "cypress run",
     "open": "cypress open",
-    "test:search": "cypress run -s cypress/integration/Google.feature"
+    "test:search": "cypress run -s cypress/integration/Google.feature",
+    "cleanup": "rm -fr cypress/reports",
+    "merge_reports": "mochawesome-merge cypress/reports/*.json > output.json",
+    "mochawesome_report": "marge --reportDir cypress/reports -t index.html -p index.html -f index.html output.json",
+    "cy:report": "npm run cleanup && cypress run || npm run merge_reports && npm run mochawesome_report"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "cypress": "^4.12.1",
-    "cypress-cucumber-preprocessor": "^4.1.4"
+    "cypress-cucumber-preprocessor": "^4.1.4",
+    "mocha": "^10.2.0",
+    "mochawesome": "^7.1.3",
+    "mochawesome-merge": "^4.3.0",
+    "mochawesome-report-generator": "^6.2.0"
   },
   "dependencies": {
     "@cypress/xpath": "^2.0.3"
@@ -24,6 +32,6 @@
       "outputFolder": "cypress/cucumber-json",
       "filePrefix": "",
       "fileSuffix": ".cucumber"
-  }
+    }
   }
 }

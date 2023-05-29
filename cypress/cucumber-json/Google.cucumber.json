@@ -28,7 +28,7 @@
             "name": "I open Google page",
             "result": {
               "status": "passed",
-              "duration": 1607000000
+              "duration": 3257000000
             }
           },
           {
@@ -38,17 +38,18 @@
             "name": "I search for \"Cheese\"",
             "result": {
               "status": "passed",
-              "duration": 3513000000
+              "duration": 6677000000
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
             "line": 9,
-            "name": "the page title should start with \"Cheese\"",
+            "name": "the page title should start with \"cheese\"",
             "result": {
-              "status": "passed",
-              "duration": 53000000
+              "status": "failed",
+              "duration": 4859000000,
+              "error_message": "AssertionError: Timed out retrying: expected 'Cheese - Pesquisa Google' to include 'cheese'\n    at Context.eval (https://www.google.com.br/__cypress/tests?p=cypress/integration/Google.feature:48:14)\n    at Context.resolveAndRunStepDefinition (https://www.google.com.br/__cypress/tests?p=cypress/integration/Google.feature:10412:9)\n    at Context.eval (https://www.google.com.br/__cypress/tests?p=cypress/integration/Google.feature:9741:35)"
             }
           }
         ]
