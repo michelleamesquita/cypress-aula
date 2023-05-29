@@ -39,3 +39,13 @@ cypress/plugin/index.js
  - npm run open
  - npm test:search 
  ```
+ 
+ ## package.json
+
+```
+  "scripts": {
+    "test": "cypress run",
+    "open": "cypress open",
+    "test:search": "cypress run -s cypress/integration/Google.feature"
+  }
+  ```
